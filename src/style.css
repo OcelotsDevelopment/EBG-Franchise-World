@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ED1D24;
+  --color-secondary: #FD4C66;
+  --color-tertiary: #10638e;
+}
+
+body {
+  font-family: 'Roboto Variable', sans-serif;
+}
