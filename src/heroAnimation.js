@@ -3,9 +3,18 @@ import { gsap } from 'gsap';
 // Your image paths
 const images = [
   './public/assets/hero1.webp',
-  './public/assets/hero2.jpg',
-  './public/assets/hero3.png',
+  './public/assets/hero4.jpg',
 ];
+
+const hedr = [
+  "Unleash New Business <br>Possibilities",
+  "Join India’s Premier<br> Franchise & Business Expo"
+]
+
+// const subHead = [
+//   `Vijayawada, Andhra Pradesh 2- 3 <br class="block md:hidden">August, 2025`,
+//   `Vijayawada, Andhra Pradesh 2- 3 August, 2025`
+// ]
 
 let currentImageIndex = 0;
 let backgroundAnimation;
@@ -13,6 +22,7 @@ let backgroundAnimation;
 // Method 1: Simple Fade Animation (Recommended)
 function startBackgroundAnimation() {
   const heroSection = document.querySelector('.hero-bg');
+  const hereoText = document.querySelector('#heroText')
   
   backgroundAnimation = gsap.to({}, {
     duration: 2,
@@ -27,6 +37,7 @@ function startBackgroundAnimation() {
         onStart: function() {
           // Change background image
           heroSection.style.backgroundImage = `url(${images[nextIndex]})`;
+          hereoText.innerHTML = hedr[nextIndex]
         }
       });
       

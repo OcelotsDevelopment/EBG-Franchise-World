@@ -28,7 +28,7 @@
           <a href="#category">Categories</a>
           <a href="#testmoney">Testimonials</a>
 
-          <button class="uppercase bg-primary px-8 py-1 ml-6 rounded-md text-white ">BUY TICKET</button>
+          <button class=" bap uppercase bg-primary px-8 py-1 ml-6 rounded-md text-white cursor-pointer ">BUY TICKET</button>
         </nav>
         <button id="mobile-menu-button" class="block md:hidden">
           <i class="fa-solid fa-bars"></i>
@@ -45,7 +45,7 @@
             <a href="#testmoney">Testimonials</a>
           </div>
           <button
-            class="bap block text-white px-4 py-2 bg-gradient-to-r from-primary to-secondary cursor-pointer rounded-lg mx-2 w-[95%] text-center">
+            class="bap block text-white px-4 py-2 bg-gradient-to-r from-primary to-secondary cursor-pointer rounded-lg mx-2 w-[95%] text-center  ">
             Buy Ticket
           </button>
         </div>
@@ -57,11 +57,10 @@
         <div class="flex flex-col justify-center items-center gap-2 ">
           <div class="line w-0.5 h-16 bg-white"></div>
           <div class="text-white text-center">
-            <h1 class="text-center text-2xl md:text-7xl font-bold mb-2.5">
+            <h1 id="heroText" class="text-center text-2xl md:text-7xl font-bold mb-2.5">
               Unleash New Business <br>Possibilities
             </h1>
-            <p class=" text-base md:text-2xl font-bold uppercase">Vijayawada, Andhra Pradesh 2- 3 <br
-                class="block md:hidden">August, 2025</p>
+            <p class=" text-base md:text-2xl font-bold uppercase">Vijayawada, Andhra Pradesh 2- 3 <br class="block md:hidden">August, 2025</p>
           </div>
           <div class="line w-0.5 h-16 bg-white"></div>
           <button class="uppercase bg-primary px-7 py-2 mt-2.5 border border-white rounded-md text-white ">buy
@@ -286,7 +285,7 @@
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/1.png" alt="Opportunity 1"
                   class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[246px] mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 min-h-[300px] md:min-h-[192px] ">
+                <div class="px-6 pb-6 min-h-[315px] md:min-h-[192px] ">
                   <p class="text-2xl mb-4">Ev & Electronics appliances</p>
                   <ul class="list-disc pl-4 text-[#5A5959]">
                     <li> EV innovations and green mobility solutions</li>
@@ -487,7 +486,38 @@
       </div>
     </section>
 
-    <section class="bg-black text-white pb-16 px-4 md:pb-36">
+    <section class="bg-black py-16 px-4">
+      <div class="bg-zinc-900 max-w-4xl mx-auto rounded-3xl p-8 text-white text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Book Your Pass Now</h2>
+    
+        <div class="bg-zinc-800 rounded-2xl p-6 mb-8 flex flex-col md:flex-row items-center md:items-center gap-4 text-left text-white/90 text-sm">
+          <div class="text-lg text-primary">
+            <!-- <i class="fa-regular fa-circle-info"></i> -->
+            <i class="fa-solid fa-circle-info"></i>
+          </div>
+          <ul class="list-disc list-outside pl-2.5">
+            <li>Seats are strictly limited to serious business-minded investors only.</li>
+            <li>Walk-ins will be denied entry without prior registration.</li>
+          </ul>
+        </div>
+    
+        <button class="bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 mx-auto mb-6">
+          Book My ₹99 Pass Now <span>
+            <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.884 7.88416C15.1178 7.64935 15.249 7.3315 15.249 7.00016C15.249 6.66883 15.1178 6.35098 14.884 6.11617L9.88403 1.11617C9.76794 1.00008 9.63012 0.90799 9.47845 0.845163C9.32677 0.782337 9.1642 0.75 9.00003 0.75C8.66846 0.75 8.35048 0.881714 8.11603 1.11617C7.88158 1.35062 7.74986 1.6686 7.74986 2.00016C7.74986 2.33173 7.88158 2.64971 8.11603 2.88416L10.982 5.75016L2.00003 5.75016C1.66851 5.75016 1.35056 5.88186 1.11614 6.11628C0.881723 6.3507 0.750029 6.66864 0.750029 7.00016C0.750029 7.33169 0.881723 7.64963 1.11614 7.88405C1.35056 8.11847 1.66851 8.25016 2.00003 8.25016L10.982 8.25016L8.11603 11.1162C7.99994 11.2323 7.90785 11.3701 7.84503 11.5217C7.7822 11.6734 7.74986 11.836 7.74986 12.0002C7.74986 12.1643 7.7822 12.3269 7.84503 12.4786C7.90785 12.6303 7.99994 12.7681 8.11603 12.8842C8.23212 13.0003 8.36993 13.0923 8.52161 13.1552C8.67329 13.218 8.83585 13.2503 9.00003 13.2503C9.1642 13.2503 9.32677 13.218 9.47845 13.1552C9.63012 13.0923 9.76794 13.0003 9.88403 12.8842L14.884 7.88416Z" fill="white"/>
+              </svg>              
+          </span>
+        </button>
+    
+        <div class="flex justify-center flex-wrap gap-6 text-sm text-white/90">
+          <div class="flex items-center gap-2"><span class="text-red-500">✔</span> Secure Payment</div>
+          <div class="flex items-center gap-2"><span class="text-red-500">✔</span> Instant Access</div>
+          <div class="flex items-center gap-2"><span class="text-red-500">✔</span> 24/7 Support</div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- <section class="bg-black text-white pb-16 px-4 md:pb-36">
       <h2 class="text-center text-2xl md:text-3xl font-bold mb-14">BOOK YOUR PASS NOW</h2>
 
       <div class="max-w-4xl mx-auto p-6">
@@ -505,10 +535,6 @@
               </div>
 
               <div class="text-center pt-4">
-                <!-- <button
-                  class="bg-brand-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-colors duration-200 shadow-lg">
-                  Book My ₹99 Pass Now
-                </button> -->
                 <a href="#"
                   class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded transition-all duration-300">
                   BUY TICKET
@@ -518,7 +544,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
 
     <section class="bg-white py-20 px-6 md:px-12 text-center">
@@ -536,11 +562,9 @@
 
           <!-- Logo 3 -->
           <img src="./public/partner-logo/ebygo.png" alt="eBikeGo" class="w-[120px] md:w-[160px] object-contain" />
-          <!-- <img src="./public/partner-logo/brillen.png" alt="Brillen" class="w-[120px] md:w-[160px] object-contain" /> -->
-
+ 
           <!-- Logo 4 -->
           <img src="./public/partner-logo/calton.png" alt="Daewoo" class="w-[120px] md:w-[160px] object-contain" />
-          <!-- <img src="./public/partner-logo/nonstop.png" alt="Nonstop" class="w-[120px] md:w-[160px] object-contain" /> -->
 
           <!-- Logo 5 -->
           <img src="./public/partner-logo/aaa.png" alt="Adhira & Appa Coffee"
@@ -550,9 +574,13 @@
 
           <!-- Logo 7 -->
           <img src="./public/partner-logo/sweetmagic.png" alt="EBG Realty"
-            class="w-[120px] md:w-[160px] object-contain" />
+          class="w-[120px] md:w-[160px] object-contain" />
+
+          <!-- Logo 8 -->
           <img src="./public/partner-logo/biggiesburger.png" alt="EBG Realty"
-            class="w-[120px] md:w-[160px] object-contain" />
+          class="w-[120px] md:w-[160px] object-contain" />
+
+          <!-- Logo 9 -->
           <img src="./public/partner-logo/worldoftortillas.png" alt="EBG Realty"
             class="w-[120px] md:w-[160px] object-contain" />
         </div>
@@ -590,7 +618,8 @@
                 </div>
                 <div class="flip-card-back bg-rose-500 text-left rounded-sm h-full overflow-y-hidden">
                   <!-- <div class="w-full min-h-[250px] object-left-bottom " style="background-image: url('./public/hover/Background+Overlay\ \(1\).jpg');"></div> -->
-                  <img src="./public/hover/exhibit.png" alt="" class="w-full h-[250px]">
+                  <img src="./public/hover/exhibit.png" alt="" class="hidden md:block w-full h-[250px]">
+                  <img src="./public/hover/FW mobile image EXHIBIT.png" alt="" class="block md:hidden w-full h-[250px]">
                 </div>
               </div>
             </div>

@@ -3,8 +3,9 @@ import './style.css'
 import '@fontsource-variable/roboto';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './oppor'
-// import './heroAnimation'
+import './heroAnimation'
 import './mobileMenu'
+import './bookForm'
 
 document.querySelectorAll('a[href^="#"]').forEach(elem => {
     elem.addEventListener('click', e => {
