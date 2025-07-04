@@ -10,23 +10,40 @@
 
 <body>
   <main class="relative">
-    <header class="bg-black text-white absolute top-0 left-0 right-0 z-50">
+    <header class="bg-black text-white fixed top-0 left-0 right-0 z-50 shadow-lg shadow-gray-900 ">
       <div class="flex justify-between px-8 py-7">
         <img src="./public/logowhite.png" alt="" class="h-6 md:h-11">
         <nav class="hidden md:flex items-center gap-8 ">
-          <a href="">Home</a>
-          <a href="">About</a>
-          <a href="">Categories</a>
-          <a href="">Testimonials</a>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#category">Categories</a>
+          <a href="#testmoney">Testimonials</a>
 
           <button class="uppercase bg-primary px-8 py-1 ml-6 rounded-md text-white ">BUY TICKET</button>
         </nav>
-        <button class="block md:hidden">
+        <button id="mobile-menu-button" class="block md:hidden">
           <i class="fa-solid fa-bars"></i>
         </button>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu"
+        class="hidden absolute right-0 z-50 mt-2 text-black bg-white rounded-lg shadow-xl py-2 transform origin-top transition-all duration-200 ease-in-out opacity-0 scale-95"
+        style="width: calc(100vw)"
+          >
+          <div class="flex flex-col gap-1.5 px-2.5 mb-2.5">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#category">Categories</a>
+          <a href="#testmoney">Testimonials</a>
+        </div>
+          <button
+            class="bap block text-white px-4 py-2 bg-gradient-to-r from-primary to-secondary cursor-pointer rounded-lg mx-2 w-[95%] text-center">
+            Buy Ticket
+          </button>
+        </div>
       </div>
     </header>
-    <section class="hero-bg h-screen w-full bg-center bg-cover relative"
+    <section id="home" class="hero-bg h-screen w-full bg-center bg-cover relative"
       style="background-image: url(./public/assets/hero1.jpg);">
       <div class="absolute top-1/2 left-1/2 -translate-1/2 w-full ">
         <div class="flex flex-col justify-center items-center gap-2 ">
@@ -89,7 +106,7 @@
       </div>
     </section>
 
-    <section class="bg-black text-white py-20 px-6 md:px-12 text-center">
+    <section id="about" class="bg-black text-white py-20 px-6 md:px-12 md:pt-28 text-center">
       <div class="max-w-5xl mx-auto">
         <!-- Heading -->
         <h2 class="text-2xl md:text-4xl font-bold mb-4">About The Event</h2>
@@ -202,36 +219,18 @@
       </div>
     </section>
 
-    <section class="bg-black text-white py-20 px-6 md:px-12">
+    <section id="category" class="bg-black text-white py-20 px-6 md:px-12 md:pt-24">
       <div class="max-w-7xl mx-auto text-center relative">
-        <h2 class="text-2xl md:text-4xl font-bold mb-10">Franchise Investment Opportunities Await</h2>
+        <h2 class="text-2xl md:text-4xl font-bold mb-10 md:mb-16">Franchise Investment Opportunities Await</h2>
 
         <!-- Swiper Container -->
         <div class="swiper mySwiper ">
           <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <!-- <div class="swiper-slide h-full">
-              <div class="text-black text-left bg-white  rounded-2xl h-full">
-                <img src="./public/swiper/1.jpg" alt="Opportunity 1"
-                  class="rounded-xl w-full h-auto mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[192px]">
-                  <p class="text-2xl mb-4">Ev & Electronics appliances</p>
-                  <ul class="list-disc pl-4 text-[#5A5959]">
-                    <li> EV innovations and green mobility solutions</li>
-                    <li>Smart electronics and home appliances</li>
-                    <li>Franchise models in EV and tech retail</li>
-                    <li>Accessories, tools, and connected devices</li>
-                  </ul>
-                </div>
-              </div>
-            </div> -->
-
-            <!-- Slide 2 -->
             <div class="swiper-slide h-full">
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/2.jpg" alt="Opportunity 1"
                   class="rounded-xl w-full h-auto mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[192px]">
+                <div class="px-6 pb-6  min-h-[192px] max-h-full">
                   <p class="text-2xl mb-4">RETAIL & FASHION</p>
                   <ul class="list-disc pl-4 text-[#5A5959]">
                     <li>Apparel, accessories, and footwear franchises</li>
@@ -247,7 +246,7 @@
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/3.jpg" alt="Opportunity 1"
                   class="rounded-xl w-full h-auto mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[192px]">
+                <div class="px-6 pb-6  min-h-[192px] max-h-full">
                   <p class="text-2xl mb-4">HEALTHCARE & WELLNESS</p>
                   <ul class="list-disc pl-4 text-[#5A5959]">
                     <li>Multi-specialty clinics and diagnostic centers</li>
@@ -263,7 +262,7 @@
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/4.jpg" alt="Opportunity 1"
                   class="rounded-xl w-full h-auto mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[192px]">
+                <div class="px-6 pb-6 min-h-[192px] max-h-full">
                   <p class="text-2xl mb-4">TECH & SERVICES</p>
                   <ul class="list-disc pl-4 text-[#5A5959]">
                     <li>IT solutions, SaaS platforms, and software providers</li>
@@ -278,8 +277,8 @@
             <div class="swiper-slide h-full">
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/1.png" alt="Opportunity 1"
-                  class="rounded-xl w-full h-auto max-h-[246px] mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[192px]">
+                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[246px] mx-auto shadow-md mb-6" />
+                <div class="px-6 pb-6 min-h-[192px] max-h-full">
                   <p class="text-2xl mb-4">Ev & Electronics appliances</p>
                   <ul class="list-disc pl-4 text-[#5A5959]">
                     <li> EV innovations and green mobility solutions</li>
@@ -290,11 +289,7 @@
                 </div>
               </div>
             </div>
-
-            <!-- Add more slides as needed -->
           </div>
-          <!-- Pagination -->
-          <div class="swiper-pagination"></div>
         </div>
 
         <!-- Navigation -->
@@ -308,14 +303,14 @@
             <i class="fa-solid fa-arrow-right"></i>
           </div>
         </div>
-        <div class="flex md:hidden gap-5 pt-5">
+        <!-- <div class="flex md:hidden gap-5 pt-5">
           <div class="swiper-button-prev cursor-pointer">
             <i class="fa-solid fa-arrow-left"></i>
           </div>
           <div class="swiper-button-next cursor-pointer">
             <i class="fa-solid fa-arrow-right"></i>
           </div>
-        </div>
+        </div> -->
       </div>
       </div>
     </section>
@@ -407,6 +402,97 @@
       </div>
     </section>
 
+    <section class="bg-black text-white py-16 px-4 md:pb-36">
+      <h2 class="text-center text-2xl md:text-3xl font-bold mb-14">EARLY BIRD BONUSES (IF YOU BOOK NOW)</h2>
+
+      <div class="max-w-4xl mx-auto p-6">
+        <div class="bg-white rounded-lg shadow-lg border-2 border-brand-red">
+          <div class="p-8">
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="text-lg font-semibold text-black">₹900 Discount on ₹999 Pass</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="text-lg font-semibold text-black">Printed Investor Guide: "How to Select a
+                    Franchise/Investment"</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="text-lg font-semibold text-black">Reserved Access to VIP Zones</p>
+                </div>
+              </div>
+
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <div class="flex-1">
+                  <p class="text-lg font-semibold text-black">Surprise gift from one of our flagship brands</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-black text-white pb-16 px-4 md:pb-36">
+      <h2 class="text-center text-2xl md:text-3xl font-bold mb-14">BOOK YOUR PASS NOW</h2>
+
+      <div class="max-w-4xl mx-auto p-6">
+        <div class="bg-white rounded-lg shadow-lg border-2 border-brand-red">
+
+          <div class="p-8">
+            <div class="space-y-6">
+              <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-brand-red">
+                <p class="text-lg text-black font-medium">
+                  Seats are strictly limited to serious business-minded investors only.
+                </p>
+                <p class="text-lg text-black font-medium mt-2">
+                  Walk-ins will be denied entry without prior registration.
+                </p>
+              </div>
+
+              <div class="text-center pt-4">
+                <!-- <button
+                  class="bg-brand-red hover:bg-red-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-colors duration-200 shadow-lg">
+                  Book My ₹99 Pass Now
+                </button> -->
+                <a href="#"
+                  class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded transition-all duration-300">
+                  BUY TICKET
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <section class="bg-white py-20 px-6 md:px-12 text-center">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-2xl md:text-4xl font-bold text-black mb-4">Our Exhibitors</h2>
@@ -419,11 +505,11 @@
 
           <!-- Logo 2 -->
           <img src="./public/partner-logo/daewoo.png" alt="Daewoo" class="w-[120px] md:w-[160px] object-contain" />
-          
+
           <!-- Logo 3 -->
           <img src="./public/partner-logo/ebygo.png" alt="eBikeGo" class="w-[120px] md:w-[160px] object-contain" />
           <!-- <img src="./public/partner-logo/brillen.png" alt="Brillen" class="w-[120px] md:w-[160px] object-contain" /> -->
-          
+
           <!-- Logo 4 -->
           <img src="./public/partner-logo/calton.png" alt="Daewoo" class="w-[120px] md:w-[160px] object-contain" />
           <!-- <img src="./public/partner-logo/nonstop.png" alt="Nonstop" class="w-[120px] md:w-[160px] object-contain" /> -->
@@ -435,9 +521,12 @@
           <!-- Logo 6 -->
 
           <!-- Logo 7 -->
-          <img src="./public/partner-logo/sweetmagic.png" alt="EBG Realty" class="w-[120px] md:w-[160px] object-contain" />
-          <img src="./public/partner-logo/biggiesburger.png" alt="EBG Realty" class="w-[120px] md:w-[160px] object-contain" />
-          <img src="./public/partner-logo/worldoftortillas.png" alt="EBG Realty" class="w-[120px] md:w-[160px] object-contain" />
+          <img src="./public/partner-logo/sweetmagic.png" alt="EBG Realty"
+            class="w-[120px] md:w-[160px] object-contain" />
+          <img src="./public/partner-logo/biggiesburger.png" alt="EBG Realty"
+            class="w-[120px] md:w-[160px] object-contain" />
+          <img src="./public/partner-logo/worldoftortillas.png" alt="EBG Realty"
+            class="w-[120px] md:w-[160px] object-contain" />
         </div>
       </div>
     </section>
@@ -555,7 +644,7 @@
       </div>
     </section>
 
-    <section class="bg-black text-white py-20 px-6 md:px-12 text-center">
+    <section id="testmoney" class="bg-black text-white py-20 px-6 md:px-12 text-center">
       <div class="max-w-4xl mx-auto">
         <!-- Heading -->
         <h2 class="text-2xl md:text-4xl font-bold mb-4">WHAT BRANDS SAY</h2>
@@ -592,11 +681,11 @@
 
           <p class="text-xs font-semibold uppercase mb-2">Social Media</p>
           <div class="flex items-center gap-4 text-xl justify-end md:justify-start">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/people/FranchiseeWorld/61568299003472/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/104996260/admin/dashboard/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/franchiseworldofficial/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCXVDdgynYAq5L_yD9O9n9lQ" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/FFranchiseeworld" aria-label="X"><i class="fab fa-x-twitter"></i></a>
           </div>
         </div>
       </div>
