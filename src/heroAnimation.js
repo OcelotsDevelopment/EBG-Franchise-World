@@ -39,3 +39,12 @@ function startImageCrossfade() {
 }
 
 startImageCrossfade();
+
+gsap.to(".line", {
+  y: (index) => index === 0 ? -10 : 10,
+  yoyo: true,
+  duration: 0.5,
+  delay: 0.2,
+  ease: "power1.inOut",
+  repeat: -1
+})
