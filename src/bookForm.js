@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </select>
         </div>
         <div>
-        <button type="submit" class="w-full bg-black text-white font-semibold py-3 rounded-md hover:bg-gray-900 transition">
+        <button type="submit" onclick="document.getElementById('partnerModal')?.remove()" class="w-full bg-black text-white font-semibold py-3 rounded-md hover:bg-gray-900 transition">
         Book Ticket Now
       </button>
         </div>
