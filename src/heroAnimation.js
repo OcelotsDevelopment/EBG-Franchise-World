@@ -37,3 +37,8 @@ function startBackgroundAnimation() {
 }
 
 startBackgroundAnimation();
+
+gsap.fromTo( "line", 1.5, 
+  { y: -30 },
+  { y: 0, yoyo: true, repeat: -1, stagger: 0.3 }
+);
