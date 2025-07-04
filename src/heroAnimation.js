@@ -2,7 +2,7 @@ import { gsap } from 'gsap';
 
 // Your image paths
 const images = [
-  './public/assets/hero1.jpg',
+  './public/assets/hero1.webp',
   './public/assets/hero2.jpg',
   './public/assets/hero3.png',
 ];
@@ -38,7 +38,13 @@ function startBackgroundAnimation() {
 
 startBackgroundAnimation();
 
-gsap.fromTo( "line", 1.5, 
-  { y: -30 },
-  { y: 0, yoyo: true, repeat: -1, stagger: 0.3 }
-);
+// gsap.fromTo( ".line", 1.5, 
+//   { y: -30 },
+//   { y: 0, yoyo: true, repeat: -1, stagger: 0.3 }
+// );
+
+gsap.to(".line", {
+  y: 0,
+  stagger: { each: 0.15, yoyo: true, repeat: -1 },
+  ease: "sine.inOut"
+});
