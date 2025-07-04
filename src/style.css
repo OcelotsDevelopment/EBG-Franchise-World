@@ -11,6 +11,16 @@ body {
   overflow-x: hidden;
 }
 
+.earlybox {
+  box-shadow: 0px 4px 12px 0px #FFFFFF30;
+  background: linear-gradient(90deg, #181818 0%, #000000 100%);
+  transition: background 300ms ease-in-out;
+}
+.earlybox:hover {
+  background: linear-gradient(90deg, #040404 4.33%, rgba(129, 5, 5, 0.14) 62.02%, #000000 100%);
+  background-color: rgba(129, 5, 5, 0.14);
+}
+
 /* Flip Card's */
 .flip-card {
   background-color: transparent;
