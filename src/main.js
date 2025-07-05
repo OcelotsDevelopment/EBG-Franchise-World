@@ -6,6 +6,7 @@ import './oppor'
 import './heroAnimation'
 import './mobileMenu'
 import './bookForm'
+import './generalAnime'
 
 document.querySelectorAll('a[href^="#"]').forEach(elem => {
     elem.addEventListener('click', e => {
