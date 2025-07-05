@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const modal = /*html*/ `
   <div id="partnerModal" class="partner-modal fixed inset-0 bg-black/50 bg-opacity-40 flex justify-center items-center z-50">
-  <form id="partnerForm" class="w-full max-w-md bg-white rounded-2xl p-6 border border-black/10 overflow-y-scroll" style="height: calc(100vh - 50px);">
+  <form id="partnerForm" class="w-full max-w-xl bg-white rounded-2xl p-6 border border-black/10 overflow-y-scroll" style="height: calc(100vh - 50px);">
   <div class="flex justify-between items-center mb-6 "> <h2 class="text-2xl font-bold text-center">Buy Tickets Now</h2> <a id="closePartnerModal" class="w-commerce-commercecartcloselink closse-button w-inline-block cursor-pointer" onclick="document.getElementById('partnerModal')?.remove()">
   <svg class="cart-closer" width="16px" height="16px" viewBox="0 0 16 16">
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
