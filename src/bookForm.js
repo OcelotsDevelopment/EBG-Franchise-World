@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = /*html*/ `
   <div id="partnerModal" class="partner-modal fixed inset-0 bg-black/50 bg-opacity-40 flex justify-center items-center z-50">
   <form id="partnerForm" class="w-full max-w-xl bg-white rounded-2xl p-6 border border-black/10 overflow-y-scroll" style="height: calc(100vh - 50px);">
-  <div class="flex justify-between items-center mb-6 "> <h2 class="text-2xl font-bold text-center">Buy Tickets Now</h2> <a id="closePartnerModal" class="w-commerce-commercecartcloselink closse-button w-inline-block cursor-pointer" onclick="document.getElementById('partnerModal')?.remove()">
+  <div class="flex justify-between items-center mb-6 "> <h2 class="text-2xl font-bold text-center">Register Nows Now</h2> <a id="closePartnerModal" class="w-commerce-commercecartcloselink closse-button w-inline-block cursor-pointer" onclick="document.getElementById('partnerModal')?.remove()">
   <svg class="cart-closer" width="16px" height="16px" viewBox="0 0 16 16">
       <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
           <g fill-rule="nonzero" fill="#333333">
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Add event listener after modal is created
       setTimeout(() => {
         const form = document.getElementById("partnerForm");
-        const trueRadio = document.getElementById("trueRadio");
+        // const trueRadio = document.getElementById("trueRadio");
         const falseRadio = document.getElementById("falseRadio");
         const first = document.getElementById("first");
         const second = document.getElementById("second");
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const bookTicket = document.getElementById("bookTicket");
 
         if (form) {
-          trueRadio.addEventListener("change", () => toggleBusinessField(true));
+          // trueRadio.addEventListener("change", () => toggleBusinessField(true));
           falseRadio.addEventListener("change", () =>
             toggleBusinessField(false)
           );
