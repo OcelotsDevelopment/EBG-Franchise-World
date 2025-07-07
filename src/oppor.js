@@ -5,7 +5,7 @@ import 'swiper/css';
 
 // Remove the modules array from your config
 const swiper = new Swiper('.mySwiper', {
-  // loop: true,
+  loop: true,
   spaceBetween: 20,
   slidesPerView: 1,
   navigation: {
