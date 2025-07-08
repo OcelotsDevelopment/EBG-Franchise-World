@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="flex flex-col md:flex-row gap-2.5 w-full">
             <div class="w-full md:w-1/2">
               <label class="block font-semibold mb-1 text-[#6C6C6C]">Mobile Number</label>
-              <input type="text" id="mobileNumber" placeholder="Enter Your Number"
+              <input type="number" id="mobileNumber" placeholder="Enter Your Number"
                 class="w-full shadow rounded-md px-3 py-2 mb-1" />
               <div id="mobileNumber-error" class="text-red-500 text-sm mt-1 hidden"></div>
             </div>
@@ -452,17 +452,17 @@ function openRazorpayCheckout(data) {
             );
 
             axios.post("http://54.85.34.167/api/ticket/book", {
-              name: "goutham",
-              email: "goutham@gmail.com",
-              mobile: "9876543213",
-              members: 3,
-              current_business_status: "Yes",
-              current_business_name: "vishnu Ventures",
-              sector_interest: "EV, F&B, Education",
-              timeline_for_starting_business: "Within 6 months",
-              investment_capability: "50 Lakhs",
-              slote: "Slot 2",
-              sloteDate: "2025-07-23",
+              name: mfirstName + " " + mlastName,
+              email: memail,
+              mobile: mmobile,
+              members: 1,
+              current_business_status: mstatus?.value,
+              current_business_name: mbusinessName,
+              sector_interest: msector,
+              timeline_for_starting_business: mtimeline,
+              investment_capability: minvestment,
+              slote: mslot,
+              sloteDate: mdate,
             }).then(res => {
               console.log(res);
               console.log("Booking done!", res);
