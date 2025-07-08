@@ -1,8 +1,10 @@
 import axios from "axios";
 
-{/* <div class="rounded-l-2xl md:min-w-[326px] object-cover "
+{
+  /* <div class="rounded-l-2xl md:min-w-[326px] object-cover "
 style="background-image: url(./public/assets/formImg.png);">
-</div> */}
+</div> */
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.querySelectorAll(".bap");
@@ -148,6 +150,24 @@ document.addEventListener("DOMContentLoaded", function () {
                   <option value="12:00pm-03:00pm">12:00pm-03:00pm</option>
                   <option value="03:00am-06:00pm">03:00am-06:00pm</option>
                 </select>
+              </div>
+
+              <div>
+                <label class="block font-semibold mb-1 text-[#6C6C6C]">Peoples</label>
+                <select id="members" class="w-full px-4 py-3 rounded-md shadow ">
+                  <option value="">Select how many members are?</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+                <div id="members-error" class="text-red-500 text-sm mt-1 hidden"></div>
               </div>
             </div>
             <div>
@@ -339,6 +359,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let minvestment;
   let mdate;
   let mslot;
+  let mmembers;
 
   button.forEach((btn) => {
     btn.addEventListener("click", function () {
@@ -371,67 +392,66 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
-// razorpay
-function openRazorpayCheckout(data) {
-  const razorpayData = {
-    key: data.key, // Replace with your actual key
-    amount: data.amount, // in paise
-    currency: data.currency,
-    name: mfirstName,
-    description: "EBG Expo 2025",
-    order_id: data.orderId, // Generated from your backend
-    handler: function (response) {
-      console.log("Payment Success!", response);
+        // razorpay
+        function openRazorpayCheckout(data) {
+          const razorpayData = {
+            key: data.key, // Replace with your actual key
+            amount: data.amount, // in paise
+            currency: data.currency,
+            name: mfirstName,
+            description: "EBG Expo 2025",
+            order_id: data.orderId, // Generated from your backend
+            handler: function (response) {
+              console.log("Payment Success!", response);
 
-      // Prepare the payload
-      const payload = {
-        razorpay_order_id: response.razorpay_order_id,
-        razorpay_payment_id: response.razorpay_payment_id,
-        razorpay_signature: response.razorpay_signature,
-        name: mfirstName + " " + mlastName,
-        email: memail,
-        members: members, // assuming `members` is defined somewhere
-        ticketId: data.ticketId,
-        slote: mslot,     // assuming `slote` is defined
-        sloteDate: mdate // assuming `sloteDate` is defined
-      };
+              // Prepare the payload
+              const payload = {
+                razorpay_order_id: response.razorpay_order_id,
+                razorpay_payment_id: response.razorpay_payment_id,
+                razorpay_signature: response.razorpay_signature,
+                name: mfirstName + " " + mlastName,
+                email: memail,
+                members: mmembers, // assuming `members` is defined somewhere
+                ticketId: data.ticketId,
+                slote: mslot, // assuming `slote` is defined
+                sloteDate: mdate, // assuming `sloteDate` is defined
+              };
 
-      // Send POST request to your backend
-      fetch("http://54.85.34.167/api/ticket/confirm-payment", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-      })
-      .then(res => res.json())
-      .then(data => {
-        console.log("Payment confirmed and data saved!", data);
-        // You can redirect the user or show a success message
-      })
-      .catch(error => {
-        console.error("Error confirming payment:", error);
-        // Show an error message to user
-      });
-    },
-    prefill: {
-      name: mfirstName + " " + mlastName,
-      email: memail,
-      contact: mmobile,
-    },
-    notes: {
-      ticketId: data.ticketId
-    },
-    theme: {
-      color: "#000000"
-    }
-  };
+              // Send POST request to your backend
+              fetch("http://54.85.34.167/api/ticket/confirm-payment", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+              })
+                .then((res) => res.json())
+                .then((data) => {
+                  console.log("Payment confirmed and data saved!", data);
+                  // You can redirect the user or show a success message
+                })
+                .catch((error) => {
+                  console.error("Error confirming payment:", error);
+                  // Show an error message to user
+                });
+            },
+            prefill: {
+              name: mfirstName + " " + mlastName,
+              email: memail,
+              contact: mmobile,
+            },
+            notes: {
+              ticketId: data.ticketId,
+            },
+            theme: {
+              color: "#000000",
+            },
+          };
 
-  const rzp = new Razorpay(razorpayData);
-  rzp.open();
-}
+          const rzp = new Razorpay(razorpayData);
+          rzp.open();
+        }
 
-        
         bookTicket.addEventListener("click", function () {
           if (validateStepTwo()) {
             // document.getElementById("partnerModal").remove();
@@ -451,25 +471,27 @@ function openRazorpayCheckout(data) {
             //   mslot
             // );
 
-            axios.post("http://54.85.34.167/api/ticket/book", {
-              name: mfirstName + " " + mlastName,
-              email: memail,
-              mobile: mmobile,
-              members: 1,
-              current_business_status: mstatus?.value,
-              current_business_name: mbusinessName,
-              sector_interest: msector,
-              timeline_for_starting_business: mtimeline,
-              investment_capability: minvestment,
-              slote: mslot,
-              sloteDate: mdate,
-            }).then(res => {
-              console.log(res);
-              console.log("Booking done!", res);
-              document.getElementById("partnerModal").remove();
-              // Trigger Razorpay
-              openRazorpayCheckout(res.data);
-            })
+            axios
+              .post("http://54.85.34.167/api/ticket/book", {
+                name: mfirstName + " " + mlastName,
+                email: memail,
+                mobile: mmobile,
+                members: Number(mmembers),
+                current_business_status: mstatus?.value,
+                current_business_name: mbusinessName,
+                sector_interest: msector,
+                timeline_for_starting_business: mtimeline,
+                investment_capability: minvestment,
+                slote: mslot,
+                sloteDate: mdate,
+              })
+              .then((res) => {
+                console.log(res);
+                console.log("Booking done!", res);
+                document.getElementById("partnerModal").remove();
+                // Trigger Razorpay
+                openRazorpayCheckout(res.data);
+              });
           }
         });
 
@@ -603,6 +625,7 @@ function openRazorpayCheckout(data) {
 
     const date = document.getElementById("selectedDate").value;
     const slot = document.getElementById("selectedSlot").value;
+    const members = document.getElementById("members").value;
 
     if (!date) {
       showError("selectedDate", "Please select a date");
@@ -614,11 +637,15 @@ function openRazorpayCheckout(data) {
       isValid = false;
     }
 
+    if (!members) {
+      showError("selectedSlot", "Please select a members");
+      isValid = false;
+    }
+
     mdate = date;
     mslot = slot;
+    mmembers = members;
 
     return isValid;
   }
 });
-
-
