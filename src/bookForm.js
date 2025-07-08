@@ -1,6 +1,12 @@
+import axios from "axios";
+
+{/* <div class="rounded-l-2xl md:min-w-[326px] object-cover "
+style="background-image: url(./public/assets/formImg.png);">
+</div> */}
+
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.querySelectorAll(".bap");
- 
+
   const modal = /*html*/ `
   <div id="partnerModal"
   class="partner-modal fixed inset-0 bg-black/50 bg-opacity-40 flex justify-center items-center z-50">
@@ -18,24 +24,20 @@ document.addEventListener("DOMContentLoaded", function () {
         </g>
       </svg>
     </a>
-
-    <div class="rounded-l-2xl md:min-w-[326px] object-cover "
-      style="background-image: url(./public/assets/formImg.png);">
-    </div>
-    <div class="w-full lg:w-2/3 bg-white px-6 py-5 overflow-y-scroll " style="height: calc(100vh - 100px);">
-      <form id="partnerForm" class="w-full max-w-xl bg-white p-6 ">
+    <div class="w-full bg-white px-6 py-5 overflow-y-scroll " style="height: calc(100vh - 100px);">
+      <form id="partnerForm" class=" bg-white p-6 ">
 
         <div id="first" class="block space-y-4">
           <!-- Name -->
-          <div class="flex gap-2.5 w-full">
-            <div class="w-1/2">
+          <div class="flex flex-col md:flex-row gap-2.5 w-full">
+            <div class="w-full md:w-1/2">
               <label class="block font-semibold mb-1 text-[#6C6C6C]">First Name</label>
               <input type="text" id="firstName" placeholder="Enter Your First Name"
                 class="w-full shadow rounded-md px-3 py-2 mb-1" />
               <div id="firstName-error" class="text-red-500 text-sm mt-1 hidden"></div>
             </div>
 
-            <div class="w-1/2">
+            <div class="w-full md:w-1/2">
               <label class="block font-semibold mb-1 text-[#6C6C6C]">Last Name</label>
               <input type="text" id="lastName" placeholder="Enter Your Last Name"
                 class="w-full shadow rounded-md px-3 py-2 mb-1" />
@@ -44,14 +46,14 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
 
           <!-- Mobile Number & Email -->
-          <div class="flex gap-2.5 w-full">
-            <div class="w-1/2">
+          <div class="flex flex-col md:flex-row gap-2.5 w-full">
+            <div class="w-full md:w-1/2">
               <label class="block font-semibold mb-1 text-[#6C6C6C]">Mobile Number</label>
               <input type="text" id="mobileNumber" placeholder="Enter Your Number"
                 class="w-full shadow rounded-md px-3 py-2 mb-1" />
               <div id="mobileNumber-error" class="text-red-500 text-sm mt-1 hidden"></div>
             </div>
-            <div class="w-1/2">
+            <div class="w-full md:w-1/2">
               <label class="block font-semibold mb-1 text-[#6C6C6C]">Email ID</label>
               <input type="email" id="emailId" placeholder="Enter Your Mail Address"
                 class="w-full shadow rounded-md px-3 py-2 mb-1" />
@@ -107,8 +109,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
           <div>
             <!-- Investment -->
-            <label class="block font-semibold mb-1 text-[#6C6C6C]">Investment capability</label>
-            <input type="text" id="investment" class="w-full shadow rounded-md px-3 py-2 mb-1" />
+            <label class="block font-semibold mb-1 text-[#6C6C6C]">Investment Capability *</label>
+            <select id="investment" class="w-full px-4 py-3 rounded-md shadow ">
+              <option value="">Select Investment Range</option>
+              <option value="Below ₹25 Lakhs">Below ₹25 Lakhs</option>
+              <option value="₹25L - ₹1 Cr">₹25L - ₹1 Cr</option>
+              <option value="₹1 Cr - ₹5 Cr">₹1 Cr - ₹5 Cr</option>
+              <option value="₹5 Cr and above">₹5 Cr and above</option>
+            </select>
             <div id="investment-error" class="text-red-500 text-sm mt-1 hidden"></div>
           </div>
           <!-- Submit button -->
@@ -320,6 +328,18 @@ document.addEventListener("DOMContentLoaded", function () {
   //   return true;
   // }
 
+  let mfirstName;
+  let mlastName;
+  let mmobile;
+  let memail;
+  let mstatus;
+  let mbusinessName;
+  let msector;
+  let mtimeline;
+  let minvestment;
+  let mdate;
+  let mslot;
+
   button.forEach((btn) => {
     btn.addEventListener("click", function () {
       if (document.getElementById("partnerModal")) return;
@@ -337,8 +357,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const businessField = document.getElementById("business-details");
 
-        trueRadio?.addEventListener("change", () => businessField.classList.remove("hidden"));
-        falseRadio?.addEventListener("change", () => businessField.classList.add("hidden"));
+        trueRadio?.addEventListener("change", () =>
+          businessField.classList.remove("hidden")
+        );
+        falseRadio?.addEventListener("change", () =>
+          businessField.classList.add("hidden")
+        );
 
         next.addEventListener("click", function () {
           if (validateStepOne()) {
@@ -347,31 +371,129 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
+// razorpay
+function openRazorpayCheckout(data) {
+  const razorpayData = {
+    key: data.key, // Replace with your actual key
+    amount: data.amount, // in paise
+    currency: data.currency,
+    name: mfirstName,
+    description: "EBG Expo 2025",
+    order_id: data.orderId, // Generated from your backend
+    handler: function (response) {
+      console.log("Payment Success!", response);
+
+      // Prepare the payload
+      const payload = {
+        razorpay_order_id: response.razorpay_order_id,
+        razorpay_payment_id: response.razorpay_payment_id,
+        razorpay_signature: response.razorpay_signature,
+        name: mfirstName + " " + mlastName,
+        email: memail,
+        members: members, // assuming `members` is defined somewhere
+        ticketId: data.ticketId,
+        slote: mslot,     // assuming `slote` is defined
+        sloteDate: mdate // assuming `sloteDate` is defined
+      };
+
+      // Send POST request to your backend
+      fetch("http://54.85.34.167/api/ticket/confirm-payment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log("Payment confirmed and data saved!", data);
+        // You can redirect the user or show a success message
+      })
+      .catch(error => {
+        console.error("Error confirming payment:", error);
+        // Show an error message to user
+      });
+    },
+    prefill: {
+      name: mfirstName + " " + mlastName,
+      email: memail,
+      contact: mmobile,
+    },
+    notes: {
+      ticketId: data.ticketId
+    },
+    theme: {
+      color: "#000000"
+    }
+  };
+
+  const rzp = new Razorpay(razorpayData);
+  rzp.open();
+}
+
+        
         bookTicket.addEventListener("click", function () {
           if (validateStepTwo()) {
             document.getElementById("partnerModal").remove();
-            alert("Ticket booked successfully!");
+            // alert("Ticket booked successfully!");
+
+            console.log(
+              mfirstName,
+              mlastName,
+              mmobile,
+              memail,
+              mstatus,
+              mbusinessName,
+              msector,
+              mtimeline,
+              minvestment,
+              mdate,
+              mslot
+            );
+
+            axios.post("http://54.85.34.167/api/ticket/book", {
+              name: "goutham",
+              email: "goutham@gmail.com",
+              mobile: "9876543213",
+              members: 3,
+              current_business_status: "Yes",
+              current_business_name: "vishnu Ventures",
+              sector_interest: "EV, F&B, Education",
+              timeline_for_starting_business: "Within 6 months",
+              investment_capability: "50 Lakhs",
+              slote: "Slot 2",
+              sloteDate: "2025-07-23",
+            }).then(res => {
+              console.log(res);
+              console.log("Booking done!", res);
+
+              // Trigger Razorpay
+              openRazorpayCheckout(res.data);
+            })
           }
         });
 
         // Close modal when clicking background
-        document.getElementById("partnerModal").addEventListener("click", (e) => {
-          if (e.target.id === "partnerModal") {
-            document.getElementById("partnerModal").remove();
-          }
-        });
+        document
+          .getElementById("partnerModal")
+          .addEventListener("click", (e) => {
+            if (e.target.id === "partnerModal") {
+              document.getElementById("partnerModal").remove();
+            }
+          });
 
         // Close modal when clicking close button
-        document.getElementById("closePartnerModal").addEventListener("click", () => {
-          document.getElementById("partnerModal").remove();
-        });
+        document
+          .getElementById("closePartnerModal")
+          .addEventListener("click", () => {
+            document.getElementById("partnerModal").remove();
+          });
 
         // Real-time validation clearing
         document.querySelectorAll("input, select").forEach((field) => {
           field.addEventListener("input", () => clearError(field.id));
           field.addEventListener("change", () => clearError(field.id));
         });
-
       }, 100);
     });
   });
@@ -463,6 +585,16 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
+    mfirstName = firstName;
+    mlastName = lastName;
+    mmobile = mobile;
+    memail = email;
+    mstatus = status;
+    mbusinessName = businessName;
+    msector = sector;
+    mtimeline = timeline;
+    minvestment = investment;
+
     return isValid;
   }
 
@@ -481,6 +613,9 @@ document.addEventListener("DOMContentLoaded", function () {
       showError("selectedSlot", "Please select a slot");
       isValid = false;
     }
+
+    mdate = date;
+    mslot = slot;
 
     return isValid;
   }
