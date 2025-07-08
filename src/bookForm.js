@@ -434,22 +434,22 @@ function openRazorpayCheckout(data) {
         
         bookTicket.addEventListener("click", function () {
           if (validateStepTwo()) {
-            document.getElementById("partnerModal").remove();
+            // document.getElementById("partnerModal").remove();
             // alert("Ticket booked successfully!");
 
-            console.log(
-              mfirstName,
-              mlastName,
-              mmobile,
-              memail,
-              mstatus,
-              mbusinessName,
-              msector,
-              mtimeline,
-              minvestment,
-              mdate,
-              mslot
-            );
+            // console.log(
+            //   mfirstName,
+            //   mlastName,
+            //   mmobile,
+            //   memail,
+            //   mstatus,
+            //   mbusinessName,
+            //   msector,
+            //   mtimeline,
+            //   minvestment,
+            //   mdate,
+            //   mslot
+            // );
 
             axios.post("http://54.85.34.167/api/ticket/book", {
               name: mfirstName + " " + mlastName,
@@ -466,7 +466,7 @@ function openRazorpayCheckout(data) {
             }).then(res => {
               console.log(res);
               console.log("Booking done!", res);
-
+              document.getElementById("partnerModal").remove();
               // Trigger Razorpay
               openRazorpayCheckout(res.data);
             })
