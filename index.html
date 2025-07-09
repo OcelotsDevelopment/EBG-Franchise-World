@@ -26,9 +26,9 @@
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#category">Categories</a>
-          <a href="#testmoney">Testimonials</a>
+          <!-- <a href="#testmoney">Testimonials</a> -->
 
-          <button class=" bap uppercase bg-primary px-8 py-1 ml-6 rounded-md text-white cursor-pointer ">Register
+          <button class=" bap uppercase bg-primary px-8 py-1 ml-6 rounded-md text-white cursor-pointer border border-white shadow-primary shadow-lg ">Register
             Now</button>
         </nav>
         <button id="mobile-menu-button" class="block md:hidden">
@@ -43,10 +43,10 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#category">Categories</a>
-            <a href="#testmoney">Testimonials</a>
+            <!-- <a href="#testmoney">Testimonials< /a> -->
           </div>
           <button
-            class="bap block text-white px-4 py-2 bg-gradient-to-r from-primary to-secondary cursor-pointer rounded-lg mx-2 w-[95%] text-center  ">
+            class="bap block text-white px-4 py-2 bg-gradient-to-r from-primary to-secondary cursor-pointer rounded-lg border border-white shadow-primary shadow-lg mx-2 w-[95%] text-center  ">
             Register Now
           </button>
         </div>
@@ -54,11 +54,11 @@
     </header>
     <!-- style="background-image: url(./public/assets/hero1.webp);" -->
     <section id="home" class="hero-bg h-screen w-full bg-center bg-cover relative">
-      <img id="heroImg1" src="./public/assets/hero1.png" alt=""
+      <img loading="lazy" id="heroImg1" src="./public/assets/hero1.png" alt=""
         class="absolute inset-0 w-full h-full object-cover opacity-50">
-      <img id="heroImg2" src="./public/assets/hero4.png" alt=""
+      <img loading="lazy" id="heroImg2" src="./public/assets/hero4.png" alt=""
         class="absolute inset-0 w-full h-full object-cover opacity-0">
-      <img id="heroImg3" src="./public/assets/hero2.jpg" alt=""
+      <img loading="lazy" id="heroImg3" src="./public/assets/hero2.jpg" alt=""
         class="absolute inset-0 w-full h-full object-cover opacity-0">
       <div class="absolute top-1/2 left-1/2 -translate-1/2 w-full ">
         <div class="flex flex-col justify-center items-center gap-2 ">
@@ -71,7 +71,7 @@
                 class="block md:hidden">August, 2025</p>
           </div>
           <div class="line w-0.5 h-16 bg-white"></div>
-          <button class="bap uppercase bg-primary px-7 py-2 mt-2.5 border border-white rounded-md text-white ">Register
+          <button class="bap uppercase cursor-pointer bg-primary px-7 py-2 mt-2.5 rounded-lg border border-white shadow-primary shadow-lg text-white ">Register
             Now</button>
         </div>
       </div>
@@ -202,99 +202,16 @@
       <div class="mt-12 space-y-4">
         <p class="text-lg font-medium">Start From Just ₹5L – ₹5Cr Investment Range</p>
         <!-- <p class="text-lg font-semibold">Returns <span class="text-red-500">Up To 30%</span></p> -->
-        <button class="bg-red-600 hover:bg-red-700 transition text-white font-semibold py-3 px-6 rounded-md shadow-md">
+        <button class="bap bg-red-600 hover:bg-red-700 transition text-white font-semibold py-3 px-10 cursor-pointer rounded-md border border-white shadow-primary shadow-lg">
           Register Now
         </button>
       </div>
     </section>
 
-
-    <section class="md:p-5 mb-26">
-      <div class="bg-black text-white flex items-center justify-center ">
-        <div class="md:max-w-7xl w-full px-10 py-16 text-center">
-          <!-- Main Title -->
-          <h1 class="text-3xl md:text-4xl font-bold mb-16 leading-tight text-white">
-            Why Your Presence Matters?
-          </h1>
-
-          <!-- Features Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-4 bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden my-16">
-            <!-- Investment Opportunities -->
-            <div
-              class="p-12 border-r border-white/10 md:border-r-1 md:border-b-0 border-b border-b-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 group">
-              <div
-                class="w-20 h-20 mx-auto mb-8 border-2 border-primary rounded-full flex items-center justify-center text-4xl text-white group-hover:bg-primary group-hover:text-gray-900 group-hover:scale-110 transition-all duration-300">
-                <svg class="w-7 h-7 mt-0.5 text-white flex-shrink-0" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M9 12l2 2 4-4" />
-                  <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-light text-white">Discover 100+ proven franchise models</h3>
-            </div>
-
-            <!-- Meet Industry Leaders -->
-            <div
-              class="p-12 border-r border-white/10 md:border-r-1 md:border-b-0 border-b border-b-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 group">
-              <div
-                class="w-20 h-20 mx-auto mb-8 border-2 border-primary rounded-full flex items-center justify-center text-4xl text-white group-hover:bg-primary group-hover:text-gray-900 group-hover:scale-110 transition-all duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-presentation-icon lucide-presentation w-5 h-5 mt-0.5 text-white flex-shrink-0">
-                  <path d="M2 3h20" />
-                  <path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3" />
-                  <path d="m7 21 5-5 5 5" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-light text-white">Join sessions, live demos, and investor meets</h3>
-            </div>
-
-            <!-- Be Among the Select Few -->
-            <div
-              class="p-12 border-r border-white/10 md:border-r-1 md:border-b-0 border-b border-b-white/10 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 group">
-              <div
-                class="w-20 h-20 mx-auto mb-8 border-2 border-primary rounded-full flex items-center justify-center text-4xl text-white group-hover:bg-primary group-hover:text-gray-900 group-hover:scale-110 transition-all duration-300">
-                <svg class="w-5 h-5 mt-0.5 text-white flex-shrink-0" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-light text-white">Meet face-to-face with brand owners and experts</h3>
-            </div>
-
-            <div class="p-12 hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 group">
-              <div
-                class="w-20 h-20 mx-auto mb-8 border-2 border-primary rounded-full flex items-center justify-center text-4xl text-white group-hover:bg-primary group-hover:text-gray-900 group-hover:scale-110 transition-all duration-300">
-                <svg class="w-5 h-5 mt-0.5 text-white flex-shrink-0" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                  <path d="M9 12l2 2 4-4" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-light text-white">Unlock exclusive deals and partnership opportunities</h3>
-            </div>
-          </div>
+    <div id="category"></div>
 
 
-          <p class="text-center text-white text-3xl font-semibold mb-10">Start from just ₹5L – ₹2Cr investment range</p>
 
-          <div id="category" class=""></div>
-          <p class="rentsupto text-white text-base font-semibold mb-6">Returns Up To <span
-              class="text-primary">30%</span>
-          </p>
-          <!-- CTA Button -->
-          <a href="#"
-            class="bap inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-6 rounded border border-red-500 transition-all duration-300">
-            Register Now
-          </a>
-        </div>
-      </div>
-    </section>
-
-    015835
 
     <section class="bg-black text-white pb-20 px-6 md:px-12 ">
       <div class="max-w-7xl mx-auto text-center relative">
@@ -306,10 +223,10 @@
             <div class="swiper-slide h-full">
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/food.jpg" alt="Opportunity 1"
-                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[246px] mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[280px] md:h-[240px] max-h-full">
+                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[276px] mx-auto shadow-md mb-6" />
+                <div class="px-6 pb-6 h-[300px] md:h-[275px] max-h-full">
                   <p class="text-2xl mb-4">FOOD AND RESTAURANT</p>
-                  <ul class="list-disc pl-4 text-[#5A5959] space-y-6">
+                  <ul class="list-disc pl-4 text-[#5A5959] space-y-4">
                     <li>Food & bevrages brands/FMCG brands</li>
                     <li>Restaurant, QSR's, bars and lounge franchise</li>
                     <li>Institutional suppliers, technology co's/ restaurant apps</li>
@@ -322,10 +239,10 @@
             <div class="swiper-slide h-full">
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/hotel.jpg" alt="Opportunity 1"
-                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[246px] mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[280px] md:h-[240px] max-h-full">
+                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[276px] mx-auto shadow-md mb-6" />
+                <div class="px-6 pb-6 h-[300px] md:h-[275px] max-h-full">
                   <p class="text-2xl mb-4">Hotel, Travel & Tourism & Entertainment</p>
-                  <ul class="list-disc pl-4 text-[#5A5959] space-y-6">
+                  <ul class="list-disc pl-4 text-[#5A5959] space-y-4">
                     <li>Successful travel companies</li>
                     <li>Online travel services provider</li>
                     <li>Hospitality business franchise</li>
@@ -338,15 +255,15 @@
             <div class="swiper-slide h-full">
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/dealer.jpg" alt="Opportunity 1"
-                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[246px] mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[280px] md:h-[240px] max-h-full">
+                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[276px] mx-auto shadow-md mb-6" />
+                <div class="px-6 pb-6 h-[300px] md:h-[275px] max-h-full">
                   <p class="text-2xl mb-4">Dealer Distributor business opportunity</p>
-                  <ul class="list-disc pl-4 text-[#5A5959] space-y-6">
+                  <ul class="list-disc pl-4 text-[#5A5959] space-y-4">
                     <li>Education Products suppliers</li>
                     <li>Electronic and Electricals Systems</li>
                     <li>Pharmaceuticals Brands, Home Supplies</li>
                     <li>Security and Protection System</li>
-                    <li>Building and Construction solutions</li>
+                    <!-- <li>Building and Construction solutions</li> -->
                   </ul>
                 </div>
               </div>
@@ -355,10 +272,10 @@
             <div class="swiper-slide h-full">
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/health.jpg" alt="Opportunity 1"
-                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[246px] mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[280px] md:h-[240px] max-h-full">
+                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[276px] mx-auto shadow-md mb-6" />
+                <div class="px-6 pb-6 h-[300px] md:h-[275px] max-h-full">
                   <p class="text-2xl mb-4">Beauty, Health & Wellness Franchise</p>
-                  <ul class="list-disc pl-4 text-[#5A5959] space-y-6">
+                  <ul class="list-disc pl-4 text-[#5A5959] space-y-4">
                     <li>Beauty salons, Spas, Massage centre</li>
                     <li>Senior care, home care, other treatment centre</li>
                     <li>Cosmetic products</li>
@@ -371,10 +288,10 @@
             <div class="swiper-slide h-full">
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/education.jpg" alt="Opportunity 1"
-                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[246px] mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[280px] md:h-[240px] max-h-full">
+                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[276px] mx-auto shadow-md mb-6" />
+                <div class="px-6 pb-6 h-[300px] md:h-[275px] max-h-full">
                   <p class="text-2xl mb-4">Education/Edtech Franchise</p>
-                  <ul class="list-disc pl-4 text-[#5A5959] space-y-6">
+                  <ul class="list-disc pl-4 text-[#5A5959] space-y-4">
                     <li>Edtech companies</li>
                     <li>Higher Educational institutions</li>
                     <li>Preschool & day care Centre</li>
@@ -387,14 +304,14 @@
             <div class="swiper-slide h-full">
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/commerce.jpg" alt="Opportunity 1"
-                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[246px] mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[280px] md:h-[240px] max-h-full">
+                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[276px] mx-auto shadow-md mb-6" />
+                <div class="px-6 pb-6 h-[300px] md:h-[275px] max-h-full">
                   <p class="text-2xl mb-4">E-Commerce & D2C Brands</p>
-                  <ul class="list-disc pl-4 text-[#5A5959] space-y-6">
+                  <ul class="list-disc pl-4 text-[#5A5959] space-y-4">
                     <li>Mega Brands, Premium Brands, MBO's</li>
                     <li>Manufacturers seeking distribution opportunity through eRetail and D2C</li>
                     <li>Hyper Marts, MBO's, Retail Real Estate Developers</li>
-                    <li>Futuristic Smart Retail and Omni channel technologies</li>
+                    <!-- <li>Futuristic Smart Retail and Omni channel technologies</li> -->
                   </ul>
                 </div>
               </div>
@@ -403,10 +320,10 @@
             <div class="swiper-slide h-full">
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/auto.jpg" alt="Opportunity 1"
-                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[246px] mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[280px] md:h-[240px] max-h-full">
+                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[276px] mx-auto shadow-md mb-6" />
+                <div class="px-6 pb-6 h-[300px] md:h-[275px] max-h-full">
                   <p class="text-2xl mb-4">Auto & EV Brands</p>
-                  <ul class="list-disc pl-4 text-[#5A5959] space-y-6">
+                  <ul class="list-disc pl-4 text-[#5A5959] space-y-4">
                     <li>Electric Vehicles Manufacturers</li>
                     <li>Charging & Connected mobility solutions Provider</li>
                     <li>Battery Management System</li>
@@ -419,14 +336,14 @@
             <div class="swiper-slide h-full">
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/speciality.jpg" alt="Opportunity 1"
-                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[246px] mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[280px] md:h-[240px] max-h-full">
+                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[276px] mx-auto shadow-md mb-6" />
+                <div class="px-6 pb-6 h-[300px] md:h-[275px] max-h-full">
                   <p class="text-2xl mb-4">Speciality Service Franchise</p>
-                  <ul class="list-disc pl-4 text-[#5A5959] space-y-6">
+                  <ul class="list-disc pl-4 text-[#5A5959] space-y-4">
                     <li>Financial institutions and banks for institutional tie-ups</li>
                     <li>MARCOM and HR solution, Online payment service providers</li>
                     <li>Courier, Logistics and Supply chain solution providers</li>
-                    <li>Technology solution providers</li>
+                    <!-- <li>Technology solution providers</li> -->
                   </ul>
                 </div>
               </div>
@@ -435,10 +352,10 @@
             <div class="swiper-slide h-full">
               <div class="text-black text-left bg-white  rounded-2xl h-full">
                 <img src="./public/swiper/fashion.jpg" alt="Opportunity 1"
-                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[246px] mx-auto shadow-md mb-6" />
-                <div class="px-6 pb-6 h-[280px] md:h-[240px] max-h-full">
+                  class="rounded-xl w-full h-auto max-h-[203px] md:max-h-[276px] mx-auto shadow-md mb-6" />
+                <div class="px-6 pb-6 h-[300px] md:h-[275px] max-h-full">
                   <p class="text-2xl mb-4">Fashion & Jewellery Franchise</p>
-                  <ul class="list-disc pl-4 text-[#5A5959] space-y-6">
+                  <ul class="list-disc pl-4 text-[#5A5959] space-y-4">
                     <li>Clothing brands for Men, kids and women</li>
                     <li>Gold, silver, diamond, Jewellery Brands</li>
                     <li>Imitation/Art/ Jewellery</li>
@@ -632,7 +549,7 @@
       </div> -->
 
       <button
-        class="bap bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 mx-auto mb-6">
+        class="bap bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 border border-white shadow-primary rounded-lg cursor-pointer shadow-lg flex items-center gap-2 mx-auto mb-6">
         Book My <span class="line-through">₹599</span> ₹99 Pass Now <span>
           <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -777,25 +694,6 @@
       </div>
     </section>
 
-
-    <section id="testmoney" class="bg-black text-white py-20 px-6 md:px-12 text-center">
-      <div class="max-w-4xl mx-auto">
-        <!-- Heading -->
-        <h2 class="text-2xl md:text-4xl font-bold mb-4">WHAT BRANDS SAY</h2>
-        <div class="w-12 h-1 bg-white mx-auto mb-6"></div>
-
-        <!-- Quote -->
-        <p class="text-gray-300 text-sm md:text-base leading-relaxed max-w-3xl mx-auto mb-6">
-          <span class="text-xl font-bold text-white">“</span>
-          Franchise World Expo offers an excellent platform for business expansion by bringing together a wide range of
-          entrepreneurs—both established and aspiring—across various regions. It’s a one-stop destination for
-          discovering serious business prospects and franchise growth.
-        </p>
-
-        <!-- Brand Attribution -->
-        <p class="text-white font-semibold mt-6">Classic Polo</p>
-      </div>
-    </section>
 
 
     <footer class="bg-black text-white py-12 px-6 md:px-12">

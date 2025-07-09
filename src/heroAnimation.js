@@ -2,8 +2,8 @@ import { gsap } from "gsap";
 
 const hedr = [
   "Unleash New Business <br>Possibilities",
-  "Join India’s Premier<br> Franchise & Business Expo",
-  "Explore India’s top franchise show. <br>Unlock business growth in India."
+  "India’s top franchise show<br>Explore franchise growth",
+  "Top franchise event<br>Boost your  growth"
 ];
 
 let currentImageIndex = 1;

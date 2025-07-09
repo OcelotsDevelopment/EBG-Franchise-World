@@ -105,7 +105,12 @@ document.addEventListener("DOMContentLoaded", function () {
           <div>
             <!-- Timeline -->
             <label class="block font-semibold mb-1 text-[#6C6C6C]">Timeline for starting a business</label>
-            <input type="text" id="timeline" class="w-full shadow rounded-md px-3 py-2 mb-1" />
+            <select id="timeline" class="w-full px-4 py-3 rounded-md shadow ">
+                <option value="">Select Investment Timeline</option>
+                <option value="1 to 3" >1 to 3 Month's</option>
+                <option value="3 to 6" >3 to 6 Month's</option>
+                <option value="6 to 12" >6 to 12 Month's</option>
+              </select>
             <div id="timeline-error" class="text-red-500 text-sm mt-1 hidden"></div>
           </div>
 
@@ -418,7 +423,7 @@ document.addEventListener("DOMContentLoaded", function () {
               };
 
               // Send POST request to your backend
-              fetch("http://54.85.34.167/api/ticket/confirm-payment", {
+              fetch("https://apiexpo.franchiseworld.com/api/ticket/confirm-payment", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
@@ -473,7 +478,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // );
 
             axios
-              .post("http://54.85.34.167/api/ticket/book", {
+              .post("https://apiexpo.franchiseworld.com/api/ticket/book", {
                 name: mfirstName + " " + mlastName,
                 email: memail,
                 mobile: mmobile,
