@@ -1,50 +1,51 @@
-import { gsap } from 'gsap';
-
-// const images = [
-//   './public/assets/hero1.webp',
-//   './public/assets/hero4.jpg',
-// ];
+import { gsap } from "gsap";
 
 const hedr = [
   "Unleash New Business <br>Possibilities",
-  "Join India’s Premier<br> Franchise & Business Expo"
+  "Join India’s Premier<br> Franchise & Business Expo",
+  "Explore India’s top franchise show. <br>Unlock business growth in India."
 ];
 
-let currentImageIndex = 0;
+let currentImageIndex = 1;
 
 function startImageCrossfade() {
-  const img1 = document.getElementById('heroImg1');
-  const img2 = document.getElementById('heroImg2');
-  const heroText = document.getElementById('heroText');
+  const img1 = document.getElementById("heroImg1");
+  const img2 = document.getElementById("heroImg2");
+  const img3 = document.getElementById("heroImg3");
+  const heroText = document.getElementById("heroText");
 
   setInterval(() => {
-    console.log("is ansaidm");
-    
-    // Toggle index
-    currentImageIndex = (currentImageIndex + 1) % 2;
-
     if (currentImageIndex === 1) {
-      // Fade out img1, fade in img2
+      // Show img1, hide others
       gsap.to(img1, { opacity: 0, duration: 1.2, ease: "power2.inOut" });
-      gsap.to(img2, { opacity: 1, duration: 1.2, ease: "power2.inOut" });
-    } else {
-      // Fade in img1, fade out img2
-      gsap.to(img1, { opacity: 1, duration: 1.2, ease: "power2.inOut" });
+      gsap.to(img2, { opacity: 0.5, duration: 1.2, ease: "power2.inOut" });
+      gsap.to(img3, { opacity: 0, duration: 1.2, ease: "power2.inOut" });
+    } else if (currentImageIndex === 2) {
+      // Show img2, hide others
+      gsap.to(img1, { opacity: 0, duration: 1.2, ease: "power2.inOut" });
       gsap.to(img2, { opacity: 0, duration: 1.2, ease: "power2.inOut" });
+      gsap.to(img3, { opacity: 0.5, duration: 1.2, ease: "power2.inOut" });
+    } else if (currentImageIndex === 0) {
+      // Show img3, hide others
+      gsap.to(img1, { opacity: 0.5, duration: 1.2, ease: "power2.inOut" });
+      gsap.to(img2, { opacity: 0, duration: 1.2, ease: "power2.inOut" });
+      gsap.to(img3, { opacity: 0, duration: 1.2, ease: "power2.inOut" });
     }
 
     // Update hero text
     if (heroText) heroText.innerHTML = hedr[currentImageIndex];
+    currentImageIndex = (currentImageIndex + 1) % 3;
+
   }, 4000); // Change every 4 seconds
 }
 
 startImageCrossfade();
 
 gsap.to(".line", {
-  y: (index) => index === 0 ? -10 : 10,
+  y: (index) => (index === 0 ? -10 : 10),
   yoyo: true,
   duration: 0.5,
   delay: 0.2,
   ease: "power1.inOut",
-  repeat: -1
-})
+  repeat: -1,
+});

@@ -428,6 +428,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then((res) => res.json())
                 .then((data) => {
                   console.log("Payment confirmed and data saved!", data);
+                  window.location.href = "thank-you.html"
                   // You can redirect the user or show a success message
                 })
                 .catch((error) => {
