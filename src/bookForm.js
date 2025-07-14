@@ -157,28 +157,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 </select>
               </div>
 
-              <div>
-                <label class="block font-semibold mb-1 text-[#6C6C6C]">Peoples</label>
-                <select id="members" class="w-full px-4 py-3 rounded-md shadow ">
-                  <option value="">Select how many members are?</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
-                <div id="members-error" class="text-red-500 text-sm mt-1 hidden"></div>
-              </div>
             </div>
             <div>
               <button type="button" id="bookTicket"
-                class="w-full bg-black text-white font-semibold py-3 rounded-md hover:bg-gray-900 transition">
-                Book Ticket Now
+                class="w-full bg-black text-white font-semibold py-3 rounded-md hover:bg-gray-900 transition flex items-center justify-center">
+                <span class="btn-text">Book Ticket Now</span>
+                <span class="loading-spinner hidden ml-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                       class="loading-spinner">
+                      <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+                  </svg>
+                </span>
               </button>
             </div>
           </div>
@@ -188,170 +178,6 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
 </div>
 `;
-
-  // button.forEach((btn) => {
-  //   btn.addEventListener("click", function () {
-  //     document.body.insertAdjacentHTML("beforeend", modal);
-
-  //     // Add event listener after modal is created
-  //     setTimeout(() => {
-  //       const form = document.getElementById("partnerForm");
-  //       // const trueRadio = document.getElementById("trueRadio");
-  //       const falseRadio = document.getElementById("falseRadio");
-  //       const first = document.getElementById("first");
-  //       const second = document.getElementById("second");
-  //       const next = document.getElementById("next");
-  //       const bookTicket = document.getElementById("bookTicket");
-
-  //       if (form) {
-  //         // trueRadio.addEventListener("change", () => toggleBusinessField(true));
-  //         falseRadio.addEventListener("change", () =>
-  //           toggleBusinessField(false)
-  //         );
-
-  //         // Next button click validation
-  //         next.addEventListener("click", (e) => {
-  //           e.preventDefault();
-  //           if (validateFirstForm()) {
-  //             first.style.display = "none";
-  //             second.style.display = "block";
-  //           }
-  //         });
-
-  //         // Book ticket button validation
-  //         bookTicket.addEventListener("click", (e) => {
-  //           e.preventDefault();
-  //           if (validateSecondForm()) {
-  //             alert("Ticket booked successfully!");
-  //             document.getElementById("partnerModal")?.remove();
-  //           }
-  //         });
-
-  //         // Close modal when clicking outside
-  //         document
-  //           .getElementById("partnerModal")
-  //           .addEventListener("click", (e) => {
-  //             if (e.target.id === "partnerModal") {
-  //               document.getElementById("partnerModal")?.remove();
-  //             }
-  //           });
-  //       }
-  //     }, 100);
-  //   });
-  // });
-
-  // function toggleBusinessField(show) {
-  //   const field = document.getElementById("business-details");
-  //   field.classList.toggle("hidden", !show);
-  // }
-
-  // function validateFirstForm() {
-  //   const name = document.getElementById("userName").value.trim();
-  //   const mobile = document.getElementById("mobileNumber").value.trim();
-  //   const email = document.getElementById("emailId").value.trim();
-  //   const businessStatus = document.querySelector(
-  //     'input[name="status"]:checked'
-  //   );
-  //   const sector = document.getElementById("sectorInterest").value;
-  //   const timeline = document.getElementById("timeline").value.trim();
-  //   const investment = document.getElementById("investment").value.trim();
-
-  //   // Check if name is empty
-  //   if (!name) {
-  //     alert("Please enter your name");
-  //     document.getElementById("userName").focus();
-  //     return false;
-  //   }
-
-  //   // Check if mobile number is empty
-  //   if (!mobile) {
-  //     alert("Please enter your mobile number");
-  //     document.getElementById("mobileNumber").focus();
-  //     return false;
-  //   }
-
-  //   // Validate mobile number format (basic validation)
-  //   if (!/^\d{10}$/.test(mobile)) {
-  //     alert("Please enter a valid 10-digit mobile number");
-  //     document.getElementById("mobileNumber").focus();
-  //     return false;
-  //   }
-
-  //   // Check if email is empty
-  //   if (!email) {
-  //     alert("Please enter your email address");
-  //     document.getElementById("emailId").focus();
-  //     return false;
-  //   }
-
-  //   // Validate email format
-  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   if (!emailRegex.test(email)) {
-  //     alert("Please enter a valid email address");
-  //     document.getElementById("emailId").focus();
-  //     return false;
-  //   }
-
-  //   // Check if business status is selected
-  //   if (!businessStatus) {
-  //     alert("Please select your current business status");
-  //     return false;
-  //   }
-
-  //   // If business status is "yes", check if business name is provided
-  //   if (businessStatus.value === "yes") {
-  //     const businessName = document.getElementById("businessName").value.trim();
-  //     if (!businessName) {
-  //       alert("Please enter your business name");
-  //       document.getElementById("businessName").focus();
-  //       return false;
-  //     }
-  //   }
-
-  //   // Check if sector is selected
-  //   if (!sector) {
-  //     alert("Please select a sector interest");
-  //     document.getElementById("sectorInterest").focus();
-  //     return false;
-  //   }
-
-  //   // Check if timeline is empty
-  //   if (!timeline) {
-  //     alert("Please enter your timeline for starting a business");
-  //     document.getElementById("timeline").focus();
-  //     return false;
-  //   }
-
-  //   // Check if investment capability is empty
-  //   if (!investment) {
-  //     alert("Please enter your investment capability");
-  //     document.getElementById("investment").focus();
-  //     return false;
-  //   }
-
-  //   return true;
-  // }
-
-  // function validateSecondForm() {
-  //   const selectedDate = document.getElementById("selectedDate").value;
-  //   const selectedSlot = document.getElementById("selectedSlot").value;
-
-  //   // Check if date is selected
-  //   if (!selectedDate) {
-  //     alert("Please select a date");
-  //     document.getElementById("selectedDate").focus();
-  //     return false;
-  //   }
-
-  //   // Check if time slot is selected
-  //   if (!selectedSlot) {
-  //     alert("Please select a time slot");
-  //     document.getElementById("selectedSlot").focus();
-  //     return false;
-  //   }
-
-  //   return true;
-  // }
 
   let mfirstName;
   let mlastName;
@@ -377,6 +203,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const second = document.getElementById("second");
         const next = document.getElementById("next");
         const bookTicket = document.getElementById("bookTicket");
+        const spinner = document.querySelector(".loading-spinner");
+        const btnText = document.querySelector(".btn-text");
 
         const trueRadio = document.getElementById("trueRadio");
         const falseRadio = document.getElementById("falseRadio");
@@ -423,17 +251,20 @@ document.addEventListener("DOMContentLoaded", function () {
               };
 
               // Send POST request to your backend
-              fetch("https://apiexpo.franchiseworld.com/api/ticket/confirm-payment", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(payload),
-              })
+              fetch(
+                "https://apiexpo.franchiseworld.com/api/ticket/confirm-payment",
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(payload),
+                }
+              )
                 .then((res) => res.json())
                 .then((data) => {
                   console.log("Payment confirmed and data saved!", data);
-                  window.location.href = "thank-you.html"
+                  window.location.href = "thank-you.html";
                   // You can redirect the user or show a success message
                 })
                 .catch((error) => {
@@ -460,29 +291,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         bookTicket.addEventListener("click", function () {
           if (validateStepTwo()) {
-            // document.getElementById("partnerModal").remove();
-            // alert("Ticket booked successfully!");
 
-            // console.log(
-            //   mfirstName,
-            //   mlastName,
-            //   mmobile,
-            //   memail,
-            //   mstatus,
-            //   mbusinessName,
-            //   msector,
-            //   mtimeline,
-            //   minvestment,
-            //   mdate,
-            //   mslot
-            // );
+            bookTicket.disabled = true;
+            spinner.classList.remove("hidden");
+            btnText.style.display = "none";
 
             axios
               .post("https://apiexpo.franchiseworld.com/api/ticket/book", {
                 name: mfirstName + " " + mlastName,
                 email: memail,
                 mobile: mmobile,
-                members: Number(mmembers),
+                members: 1,
                 current_business_status: mstatus?.value,
                 current_business_name: mbusinessName,
                 sector_interest: msector,
@@ -497,6 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("partnerModal").remove();
                 // Trigger Razorpay
                 openRazorpayCheckout(res.data);
+                
               });
           }
         });
@@ -631,7 +451,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const date = document.getElementById("selectedDate").value;
     const slot = document.getElementById("selectedSlot").value;
-    const members = document.getElementById("members").value;
+    // const members = document.getElementById("members").value;
 
     if (!date) {
       showError("selectedDate", "Please select a date");
@@ -643,14 +463,14 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
-    if (!members) {
-      showError("selectedSlot", "Please select a members");
-      isValid = false;
-    }
+    // if (!members) {
+    //   showError("selectedSlot", "Please select a members");
+    //   isValid = false;
+    // }
 
     mdate = date;
     mslot = slot;
-    mmembers = members;
+    // mmembers = members;
 
     return isValid;
   }
