@@ -291,16 +291,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         bookTicket.addEventListener("click", function () {
           if (validateStepTwo()) {
-
             bookTicket.disabled = true;
             spinner.classList.remove("hidden");
             btnText.style.display = "none";
-
+            alert(`+91-${mmobile}`);
             axios
               .post("https://apiexpo.franchiseworld.com/api/ticket/book", {
                 name: mfirstName + " " + mlastName,
                 email: memail,
-                mobile: mmobile,
+                mobile: `+91-${mmobile}`,
                 members: 1,
                 current_business_status: mstatus?.value,
                 current_business_name: mbusinessName,
@@ -316,7 +315,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("partnerModal").remove();
                 // Trigger Razorpay
                 openRazorpayCheckout(res.data);
-                
               });
           }
         });
