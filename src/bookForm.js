@@ -303,7 +303,6 @@ document.addEventListener("DOMContentLoaded", function () {
             bookTicket.disabled = true;
             spinner.classList.remove("hidden");
             btnText.style.display = "none";
-            alert(`+91-${mmobile}`);
             axios
               .post("https://apiexpo.franchiseworld.com/api/ticket/book", {
                 name: mfirstName + " " + mlastName,
@@ -487,30 +486,3 @@ document.addEventListener("DOMContentLoaded", function () {
     return isValid;
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script>
-        // Function to get query parameter by name
-
-
-  // Capture UTM parameters and populate the form fields
-  document.getElementById('utm_source').value = getQueryParam('utm_source');
-  document.getElementById('utm_medium').value = getQueryParam('utm_medium');
-  document.getElementById('utm_campaign').value = getQueryParam('utm_campaign');
-  document.getElementById('utm_medium').value = getQueryParam('utm_medium');
-  document.getElementById('utm_content').value = getQueryParam('utm_content');
-</script>
