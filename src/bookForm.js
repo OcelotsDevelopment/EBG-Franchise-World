@@ -289,6 +289,15 @@ document.addEventListener("DOMContentLoaded", function () {
           rzp.open();
         }
 
+        function getQueryParam(name) {
+          name = name.replace(/[\[\]]/g, "\\$&");
+          let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(window.location.href);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
         bookTicket.addEventListener("click", function () {
           if (validateStepTwo()) {
             bookTicket.disabled = true;
@@ -308,6 +317,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 investment_capability: minvestment,
                 slote: mslot,
                 sloteDate: mdate,
+                SingleLine10: getQueryParam('utm_campaign'),
+                SingleLine9: getQueryParam('utm_source'),
+                SingleLine11: getQueryParam('utm_content'),
+                SingleLine12: getQueryParam('utm_medium'),
+
               })
               .then((res) => {
                 console.log(res);
@@ -473,3 +487,30 @@ document.addEventListener("DOMContentLoaded", function () {
     return isValid;
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+        // Function to get query parameter by name
+
+
+  // Capture UTM parameters and populate the form fields
+  document.getElementById('utm_source').value = getQueryParam('utm_source');
+  document.getElementById('utm_medium').value = getQueryParam('utm_medium');
+  document.getElementById('utm_campaign').value = getQueryParam('utm_campaign');
+  document.getElementById('utm_medium').value = getQueryParam('utm_medium');
+  document.getElementById('utm_content').value = getQueryParam('utm_content');
+</script>
