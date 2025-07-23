@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   <div id="partnerModal"
   class="partner-modal fixed inset-0 bg-black/50 bg-opacity-40 flex justify-center items-center z-50">
   <div id="partnerForm"
-    class="flex flex-col lg:flex-row  rounded-2xl overflow-hidden shadow-md p-2 bg-white relative">
+    class="flex flex-col lg:flex-row  rounded-2xl shadow-md overflow-hidden bg-[#eaedf3] w-[500px] relative">
     <a id="closePartnerModal" class=" closse-button w-inline-block cursor-pointer absolute top-4 right-10"
       onclick="document.getElementById('partnerModal')?.remove()">
       <svg class="cart-closer" width="16px" height="16px" viewBox="0 0 16 16">
@@ -26,154 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
         </g>
       </svg>
     </a>
-    <div class="w-full bg-white px-6 py-5 overflow-y-scroll " style="height: calc(100vh - 100px);">
-      <form id="partnerForm" class=" bg-white p-6 ">
-
-        <div id="first" class="block space-y-4">
-          <!-- Name -->
-          <div class="flex flex-col md:flex-row gap-2.5 w-full">
-            <div class="w-full md:w-1/2">
-              <label class="block font-semibold mb-1 text-[#6C6C6C]">First Name</label>
-              <input type="text" id="firstName" placeholder="Enter Your First Name"
-                class="w-full shadow rounded-md px-3 py-2 mb-1" />
-              <div id="firstName-error" class="text-red-500 text-sm mt-1 hidden"></div>
-            </div>
-
-            <div class="w-full md:w-1/2">
-              <label class="block font-semibold mb-1 text-[#6C6C6C]">Last Name</label>
-              <input type="text" id="lastName" placeholder="Enter Your Last Name"
-                class="w-full shadow rounded-md px-3 py-2 mb-1" />
-              <div id="lastName-error" class="text-red-500 text-sm mt-1 hidden"></div>
-            </div>
-          </div>
-
-          <!-- Mobile Number & Email -->
-          <div class="flex flex-col md:flex-row gap-2.5 w-full">
-            <div class="w-full md:w-1/2">
-              <label class="block font-semibold mb-1 text-[#6C6C6C]">Mobile Number</label>
-              <input type="number" id="mobileNumber" placeholder="Enter Your Number"
-                class="w-full shadow rounded-md px-3 py-2 mb-1" />
-              <div id="mobileNumber-error" class="text-red-500 text-sm mt-1 hidden"></div>
-            </div>
-            <div class="w-full md:w-1/2">
-              <label class="block font-semibold mb-1 text-[#6C6C6C]">Email ID</label>
-              <input type="email" id="emailId" placeholder="Enter Your Mail Address"
-                class="w-full shadow rounded-md px-3 py-2 mb-1" />
-              <div id="emailId-error" class="text-red-500 text-sm mt-1 hidden"></div>
-            </div>
-          </div>
-
-          <!-- Business Status -->
-          <div>
-            <label class="block font-semibold mb-2 text-[#6C6C6C]">
-              Current business status (Are you currently running a business?)
-            </label>
-            <div class="flex flex-col gap-2 mb-2">
-              <label class="flex items-center gap-2">
-                <input type="radio" name="status" value="yes" class="accent-black shadow" id="trueRadio" />
-                <span class="text-[#6C6C6C] ">Yes</span>
-              </label>
-              <label class="flex items-center gap-2">
-                <input type="radio" name="status" value="no" class="accent-black shadow" id="falseRadio" />
-                <span class="text-[#6C6C6C] ">No</span>
-              </label>
-              <div id="trueRadio-error" class="text-red-500 text-sm mt-1 hidden"></div>
-            </div>
-          </div>
-
-          <!-- Conditionally displayed input -->
-          <div id="business-details" class="mb-4 hidden">
-            <label class="block font-semibold mb-1 text-[#6C6C6C]">What is your business name?</label>
-            <input type="text" id="businessName" class="w-full shadow rounded-md px-3 py-2" />
-            <div id="businessName-error" class="text-red-500 text-sm mt-1 hidden"></div>
-          </div>
-
-          <!-- Sector -->
-          <div>
-            <label class="block font-semibold mb-1 text-[#6C6C6C]">Sector interest</label>
-            <select id="sectorInterest" class="w-full shadow rounded-md px-3 py-2 mb-1">
-              <option value="">Select Sector</option>
-              <option value="F&B">F&B</option>
-              <option value="EV">EV</option>
-              <option value="Automobiles">Automobiles</option>
-              <option value="Education">Education</option>
-              <option value="Others">Others</option>
-            </select>
-            <div id="sectorInterest-error" class="text-red-500 text-sm mt-1 hidden"></div>
-          </div>
-
-          <div>
-            <!-- Timeline -->
-            <label class="block font-semibold mb-1 text-[#6C6C6C]">Timeline for starting a business</label>
-            <select id="timeline" class="w-full px-4 py-3 rounded-md shadow ">
-                <option value="">Select Investment Timeline</option>
-                <option value="1 to 3" >1 to 3 Month's</option>
-                <option value="3 to 6" >3 to 6 Month's</option>
-                <option value="6 to 12" >6 to 12 Month's</option>
-              </select>
-            <div id="timeline-error" class="text-red-500 text-sm mt-1 hidden"></div>
-          </div>
-
-          <div>
-            <!-- Investment -->
-            <label class="block font-semibold mb-1 text-[#6C6C6C]">Investment Capability *</label>
-            <select id="investment" class="w-full px-4 py-3 rounded-md shadow ">
-              <option value="">Select Investment Range</option>
-              <option value="Below ₹25 Lakhs">Below ₹25 Lakhs</option>
-              <option value="₹25L - ₹1 Cr">₹25L - ₹1 Cr</option>
-              <option value="₹1 Cr - ₹5 Cr">₹1 Cr - ₹5 Cr</option>
-              <option value="₹5 Cr and above">₹5 Cr and above</option>
-            </select>
-            <div id="investment-error" class="text-red-500 text-sm mt-1 hidden"></div>
-          </div>
-          <!-- Submit button -->
-          <button type="button" id="next"
-            class="w-full bg-primary text-white font-semibold py-3 rounded-md hover:bg-gray-900 transition">
-            Next
-          </button>
-        </div>
-
-        <div id="second" class="hidden h-[90%] md:min-w-[501px]">
-          <div class="flex flex-col justify-between h-full gap-4">
-            <div>
-              <!-- Date selection -->
-              <div>
-                <label class="block font-semibold mb-1">Select a Date</label>
-                <select id="selectedDate" class="w-full border border-black/50 rounded-md px-3 py-2 mb-4">
-                  <option value="">Select Date</option>
-                  <option value="02-08-2025">02-08-2025</option>
-                  <option value="03-08-2025">03-08-2025</option>
-                </select>
-              </div>
-
-              <!-- Time slot selection -->
-              <div>
-                <label class="block font-semibold mb-1">Select a Slot</label>
-                <select id="selectedSlot" class="w-full border border-black/50 rounded-md px-3 py-2 mb-4">
-                  <option value="">Select Slot</option>
-                  <option value="10:00am-12:00pm">10:00am-12:00pm</option>
-                  <option value="12:00pm-03:00pm">12:00pm-03:00pm</option>
-                  <option value="03:00am-06:00pm">03:00am-06:00pm</option>
-                </select>
-              </div>
-
-            </div>
-            <div>
-              <button type="button" id="bookTicket"
-                class="w-full bg-black text-white font-semibold py-3 rounded-md hover:bg-gray-900 transition flex items-center justify-center">
-                <span class="btn-text">Book Ticket Now</span>
-                <span class="loading-spinner hidden ml-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                       class="loading-spinner">
-                      <path d="M21 12a9 9 0 1 1-6.219-8.56" />
-                  </svg>
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
+    <div class="bg-white w-full" style="height: calc(100vh - 100px);">
+     <iframe aria-label='Franchise world expo-2025' frameborder="0" style="height:100%;width:100%;border:none;" src='https://forms.zohopublic.com/ebikegohyd1/form/Franchiseworldexpo2025/formperma/rnKWqcbWOPrf4K7TCX-D4vdYnLRSX3LKxneQpXJWhqU'></iframe>
     </div>
   </div>
 </div>
